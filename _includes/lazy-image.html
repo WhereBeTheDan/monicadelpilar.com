@@ -1,0 +1,15 @@
+{% if include.src != null %}
+	{% assign srcparts = include.src | split: '.' %}
+
+	{% if false %}
+		<img class="lazy {{ include.class }}" 
+			 data-src="{{ 'nothing.gif' | prepend: site.imgpath | prepend: site.cdnurl }}" 
+			 data-lazy="[{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}, (default)], [{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}, (only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi))]" 
+			 height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
+		<noscript>
+			<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
+		</noscript>
+	{% else %}
+		<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
+	{% endif %}
+{% endif %}

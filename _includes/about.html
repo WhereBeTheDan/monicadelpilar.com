@@ -1,0 +1,20 @@
+<section class="about">
+	{% assign about_sorted = site.about | sort: 'order' %}
+	{% for section in about_sorted %}
+
+		<article class="about-section">
+			<div class="container">
+				<div class="content-inner">
+					<div class="image-content">
+						{% include lazy-image.html src = section.image_url height = '' width = '' alt = '' %}
+					</div>
+					<div class="text-content">
+						<h2 class="about-title">{{ section.title }}</h2>
+						<div class="about-content">{{ section.content }}</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+	{% endfor %}
+</section>

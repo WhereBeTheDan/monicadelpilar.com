@@ -1,0 +1,27 @@
+<section class="portfolio">
+	{% assign portfolio_sorted = site.portfolio | sort: 'order' %}
+	{% for item in portfolio_sorted %}
+
+		<article class="portfolio-item{% if item.dark_content %} light-text{% endif %}" style="background: linear-gradient({{ item.gradient }});">
+			<div class="background portfolio-background">
+				{% assign src = '/assets/images/background-' | append: item.slug | append: '.jpg' %}
+				<div class="background-inner" style="background-image: url({{ src  }});"></div>
+			</div>
+			<div class="portfolio-content">
+				<div class="container">
+					<div class="row">
+						<div class="image-content">
+							<div class="logo">
+								{% include lazy-image.html src = item.image_url height = '' width = '' alt = item.title %}
+							</div>
+						</div>
+						<div class="text-content">
+							{{ item.content }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+	{% endfor %}
+</section>

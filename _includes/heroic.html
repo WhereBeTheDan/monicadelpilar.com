@@ -1,0 +1,21 @@
+<section class="heroic">
+	<div class="background heroic-background">
+		<div class="background-inner"></div>
+	</div>
+	<div class="section-content">
+		<p class="email">
+			<a href="mailto:pili@monicadelpilar.com">pili<span>@</span>monicadelpilar.com</a>
+		</p>
+		<ul class="social-links">
+	        {% for item in site.data.social %}
+	            <li><a href="#{{ item.url }}">
+	            	<span class="screen-reader-text">{{ item.network }}</span>
+	            	<i class="fa fa-{{ item.network }}"></i>
+	            </a></li>
+	        {% endfor %}
+	    </ul>
+	    <div class="btn-wrap">
+			<a href="#resume" class="btn btn-large btn-white btn-gradient">Resumé</a>
+		</div>
+	</div>	
+</section>

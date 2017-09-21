@@ -1,0 +1,23 @@
+
+# Site settings
+title: Monica del Pilar
+email: pili@monicadelpilar.com
+description: > # this means to ignore newlines until "baseurl:"
+  Pili's portfolio website
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.monicadelpilar.com"
+
+cdnurl: ''
+imgpath: '/assets/images/'
+csshash: ''
+jshash: ''
+ganalytics: ''
+
+# Build settings
+markdown: kramdown
+include: ['_pages']
+exclude: ['package.json', 'node_modules', 'gulpfile.js']
+
+collections:
+  - about
+  - portfolio
