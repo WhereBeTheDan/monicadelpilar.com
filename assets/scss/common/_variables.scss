@@ -1,0 +1,164 @@
+//------------------------------//
+//          Typefaces           //
+//------------------------------//
+$sans-serif:				Helvetica, Arial, sans-serif;
+$serif:						Georgia, Garamond, serif;
+
+$bebas:						'Bebas';
+$bebas-neue:				'Bebas Neue';
+$josefin:					'Josefin Sans';
+$fa:						'FontAwesome', 'Font Awesome', FontAwesome;
+
+$heading:					$bebas-neue, $sans-serif;
+$body:						$josefin, $sans-serif;
+
+
+
+//------------------------------//
+//          Font sizes          //
+//------------------------------//
+$font-size:					16px;
+$line-height:				1.5;
+$small-text:				0.875em;
+$normal-text:				1em;
+$medium-text:				1.125em;
+$large-text:				1.325em;
+
+$heading-line-height:		1.25;
+$h1:						2.5em;
+$h2:						2em;
+$h3:						1.5em;
+$h4:						1.25em;
+$h5:						1em;
+$h6:						0.8em;
+
+
+
+//------------------------------//
+//       Grid Settings          //
+//------------------------------//
+$container-width:			1296px;
+$enable-flex:           	true;
+$main-sm-columns:       	12;
+$sidebar-sm-columns:    	4;
+$grid-gutter-width:			32px;
+$grid-gutter:				$grid-gutter-width / 2;
+
+
+
+//------------------------------//
+//         Color Palette        //
+//------------------------------//
+$black:						#000000;
+$white:						#ffffff;
+
+$light-grey:				#f2f2f2;
+$input-grey:				#cccccc;
+$med-grey:					#b0b0b0;
+$grey:						#737373;
+$dark-grey:					#4D4D4D;
+$text-grey:					#222222;
+
+$blue:						#5DAFD9;
+$hot-pink:					#A85A93;
+$fuchsia:					#B91E53;
+
+
+
+//------------------------------//
+//         Color Settings       //
+//------------------------------//
+$text-color:				$text-grey;
+$link-color:				$hot-pink;
+$link-hover-color:			lighten($hot-pink, 10%);
+$border-color:				$input-grey;
+
+$gradient:					linear-gradient(125deg, $blue, $hot-pink 60%, $fuchsia);
+
+//------------------------------//
+//      Bootstrap Overrides     //
+//------------------------------//
+$brand-primary:         	$hot-pink;
+$component-active-color:	$hot-pink;
+$component-active-bg:		$light-grey;
+
+$input-color:				$med-grey;
+$input-bg:					$white;
+$input-line-height:			1.4;
+$input-padding-x:			1em;
+$input-padding-y:			0.5em;
+$input-height:				auto;
+$input-height-inner:		auto;
+$input-border-focus:		$brand-primary;
+
+$input-btn-line-height:		$input-line-height;
+$input-btn-padding-x:		$input-padding-x;
+$input-btn-padding-y:		$input-padding-y;
+
+
+
+//------------------------------//
+//        Easing helpers    	//
+//------------------------------//
+$ease-in-cube:				cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cube:				cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in-out-cube:			cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$ease-out-custom:			cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-out-custom:		$ease-in-out-cube;
+
+
+//------------------------------//
+//       Page element sizes    	//
+//------------------------------//
+$logo-height:				30px;
+$logo-height-md:			40px;
+$logo-height-lg:			45px;
+$banner-padding:			1em;
+$admin-bar-height:			46px;
+$admin-bar-height-lg:		32px;
+
+$nav-bg-transition-time:		100ms;
+$nav-cols:						3;
+$nav-transition-offset:			225ms;
+$nav-transition-time: 			$nav-transition-offset * $nav-cols;
+$nav-items: 					8;
+$nav-items-offset:				$nav-transition-time / $nav-items;
+
+$nav-trigger-width: 			24px;
+$nav-trigger-height: 			$nav-trigger-width;
+$nav-span-height:				2px;
+$nav-span-width:				18px;
+$nav-span-offset:				$nav-span-width / 3;
+$nav-trigger-padding:			0.5em;
+
+
+//------------------------------//
+//  Font Awesome icon helpers   //
+//------------------------------//
+$arrow-left:				"\f177";
+$arrow-right:				"\f178";
+
+$chevron-left:				"\f104";
+$chevron-left-bold:			"\f053";
+$chevron-right:				"\f105";
+$chevron-right-bold:		"\f054";
+$chevron-up:				"\f106";
+$chevron-down:				"\f107";
+
+$check:						"\f00c";
+$close:						"\f00d";
+$undo:						"\f0e2";
+
+$map-marker:				"\f041";
+$envelope:					"\f0e0";
+$phone:						"\f10b";
+$search:					"\f002";
+$speaker:					"\f028";
+$certificate:				"\f0a3";
+$clipboard:					"\f0ea";
+$clock:						"\f017";
+$upload:					"\f0ee";
+
+$twitter:					"\f099";
+$facebook:					"\f09a";

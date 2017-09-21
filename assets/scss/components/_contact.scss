@@ -1,0 +1,41 @@
+.contact {
+	padding: 6em 0;
+	background: $gradient;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.form-box {
+		padding: 4em;
+		background-color: $light-grey;
+		max-width: 1000px;
+	}
+
+	.form-title {
+		font-weight: 300;
+
+		span {
+			font-weight: 600;
+		}
+	}
+
+	form {
+		.input-group {
+			@extend .row;
+		}
+
+		.input, .textarea {
+			@include make-col-ready;
+			margin-bottom: 1em;
+		}
+
+		@include media-breakpoint-up(md) {
+			.input {
+				@include make-col(6);
+			}
+		}
+	}
+}

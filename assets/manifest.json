@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "source": "assets/",
+    "dist": "jekyll/assets/"
+  },
+  "dependencies": {
+    "main.js": {
+      "files": [ "js/main.js" ],
+      "main": true
+    },
+    "main.css": {
+      "files": [ "scss/main.scss" ],
+      "main": true
+    },
+    "fonts": {
+      "bower": ["font-awesome"]
+    }
+  },
+  "config": {
+    "jekyllPath": "jekyll"
+  }
+}

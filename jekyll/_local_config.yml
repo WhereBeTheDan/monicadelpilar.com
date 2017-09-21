@@ -1,0 +1,7 @@
+# Jekyll configuration
+
+# Local overrides
+url: 'localhost:3000'
+cdnurl: ''
+jshash: ''
+csshash: ''

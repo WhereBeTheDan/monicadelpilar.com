@@ -1,0 +1,69 @@
+a {
+    transition: color 0.2s ease-in-out;
+
+    &:hover, &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    display: block;
+}
+
+ol, ul {
+    
+}
+
+hr {
+    width: 100%;
+}
+
+:focus {
+    outline: 0;
+}
+
+.screen-reader-text {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+.background {
+	@include overlay;
+	opacity: 0.15;
+
+	.background-inner {
+		@include overlay;
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+.social-links {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		a {
+			display: flex;
+			width: 2em;
+			height: 2em;
+			background-color: $white;
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+			@include box-shadow;
+			font-size: $large-text;
+			color: $text-color;
+		}
+	}
+}

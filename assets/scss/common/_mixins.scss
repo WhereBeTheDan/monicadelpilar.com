@@ -1,0 +1,359 @@
+//------------------------------//
+//            Layout            //
+//------------------------------//
+@mixin overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin center-vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin breakpoint-padding($ratio) {
+    @for $index from 1 through 10 {
+        &.pad-top-#{$index} {
+            padding-top: #{$index * $ratio}em;
+        }
+
+        &.pad-bottom-#{$index} {
+            padding-bottom: #{$index * $ratio}em;
+        }
+    }
+}
+
+@mixin breakpoint-position($ratio) {
+    @for $index from -10 through 10 {
+        &.top-#{$index} {
+            top: #{$index * $ratio}em;
+        }
+
+        &.right-#{$index} {
+            right: #{$index * $ratio}em;
+        }
+
+        &.bottom-#{$index} {
+            bottom: #{$index * $ratio}em;
+        }
+
+        &.left-#{$index} {
+            left: #{$index * $ratio}em;
+        }
+    }
+}
+
+@mixin block-padding {
+    @include media-breakpoint-up(md) {
+        @include breakpoint-padding(1);
+
+        &.pad-top {
+            @extend .pad-top-4;
+        }
+
+        &.pad-bottom {
+            @extend .pad-bottom-4;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include breakpoint-padding(2);
+    }
+}
+
+
+//------------------------------//
+//           Styling            //
+//------------------------------//
+@mixin large-copy {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+@mixin text-center {
+    text-align: center;
+}
+
+@mixin box-shadow($y: 4px, $spread: 22px, $offset: -5px, $color: transparentize($black, 0.7)) {
+    box-shadow: 0 $y $spread $offset $color;
+}
+
+@mixin text-shadow {
+    text-shadow: 0 3px 5px transparentize($dark-green, 0.5);
+}
+
+@mixin font-smooth {
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: greyscale;
+}
+
+@mixin font-smooth-reset {
+    font-smooth: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+
+//------------------------------//
+//          Animations          //
+//------------------------------//
+@mixin fade-up-in($duration: 0s, $offset: 20%) {
+    opacity: 0;
+    transform: translate3d(0, $offset, 0);
+    transition: all $duration $ease-out-cube 0s;
+}
+    @mixin fade-up-in-animated($duration: 2s) {
+        opacity: 1;
+        transform: translate3d(0,0,1px);
+        transition-delay: 0s;
+        transition-duration: $duration;
+    }
+
+
+@mixin blast-in-up($items: 25, $child: '.b-word-wrap', $holder: '.b-word', $duration: 1s, $ease: cubic-bezier(0.4, 0, 0.2, 1) ) {
+    opacity: 0;
+    transition: opacity #{$duration} #{$ease};
+
+    #{$child} {
+        position: relative;
+
+        #{$holder} {
+            transform: translate3d(0, 100%, 0);
+            transition: transform #{$duration} #{$ease};
+        }
+
+        @include stagger-delay($items, $holder);
+    }
+}
+    @mixin blast-in-up-animated($child: '.b-word-wrap', $holder: '.b-word') {
+        opacity: 1;
+                    
+        #{$child} #{$holder} {
+            transform: none;
+        }
+    }
+
+@mixin nav-transition-delay($items, $offset, $time: false) {
+    @for $item from 1 through $items {
+        &:nth-child(#{$item}) {
+            @if $time {
+                transition-delay: $time - ($item * $offset), $time - ($item * $offset);
+            } @else {
+                transition-delay: $item * $offset, $item * $offset;
+            }
+        }
+    }
+}
+
+@mixin stagger-delay($items: 25, $selector: 'span', $interval: 0.1, $offset: 0) {
+    @for $node from 1 through $items {
+        &:nth-child(#{$node}) #{$selector} {
+            transition-delay: #{$offset + ($interval * ($node - 1))}s;
+        }
+    }
+}
+
+@mixin stagger-before-delay($interval: 0.1, $offset: 0, $items: 25) {
+    @for $node from 1 through $items {
+        &:nth-child(#{$node}):before {
+            transition-delay: #{$offset + ($interval * ($node - 1))}s;
+        }
+    }
+}
+
+
+//------------------------------//
+//            Icons             //
+//------------------------------//
+@mixin border-arrow( $size, $left: 1em, $color: $brand-primary ) {
+    position: absolute;
+    left: $left;
+    bottom: calc(100% - 1px);
+    border: $size solid transparent;
+    border-top: none;
+    border-bottom-color: $color;
+}
+
+@mixin play( $height, $width, $color ) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: #{$height / 2} 0 #{$height / 2} $width;
+    border-color: transparent transparent transparent $color;
+    transition: border-color 0.2s ease-out;
+}
+
+@mixin prevnext {
+    text-indent: -9999px;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border-left: 2px solid transparentize($blue, 0.4);
+    border-bottom: 2px solid transparentize($blue, 0.4);
+    transform: rotate(45deg);
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover {
+        border-color: $blue;
+    }
+}
+    @mixin prev {
+        @include prevnext;
+        left: $grid-gutter-width;
+
+        @include media-breakpoint-up(md) {
+            left: 2em;
+        }
+    }
+
+    @mixin next {
+        @include prevnext;
+        right: $grid-gutter-width;
+        transform: rotate(-135deg);
+
+        @include media-breakpoint-up(md) {
+            right: 2em;
+        }
+    }
+
+
+@mixin menu-button($height, $width, $span-height, $span-width, $span-offset, $color, $time) {
+    position: relative;
+    width: $width;
+    height: $height;
+
+    span {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: $span-height;
+            width: $span-width;
+            top: $height / 2 - $span-height / 2;
+            left: ($width - $span-width) / 2;
+            background-color: $color;
+            transition: background-color 0.2s ease-in-out;
+        }
+    }
+
+    span:nth-child(2) {
+        opacity: 1;
+        transition: opacity $time;
+    }
+
+    span:first-child, span:last-child {
+        transition: background-color 0.2s ease-in-out, transform $time $ease-in-out-cube;
+        transform: none;
+
+        &:before {
+            transition: background-color 0.2s ease-in-out, transform $time $ease-in-out-cube;
+        }
+    }
+
+    span:first-child:before {
+        transform: translateY(-#{$span-offset});
+    }
+
+    span:last-child:before {
+        transform: translateY(#{$span-offset});
+    }
+}
+
+@mixin menu-button-active() {
+    span:nth-child(2) {
+        opacity: 0;
+    }
+
+    span:first-child, span:last-child {
+        &:before {
+            transform: none;
+        }
+    }
+
+    span:first-child {
+        transform: rotate(45deg);
+    }
+
+    span:last-child {
+        transform: rotate(135deg);
+    }
+}
+
+
+@mixin close($color: $text-color, $size: 39px, $inner-height: 3px) {
+    @if ( ($size - $inner-height) % 2 != 0 ) {
+        @warn "$size - $inner-height should result in an even number"
+    }
+
+    width: #{$size};
+    height: #{$size};
+    text-align: center;
+    overflow: hidden;
+
+    .top, .bottom {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: #{($size - $inner-height) / 2};
+            height: $inner-height;
+            width: 100%;
+            background-color: $color;
+        }
+    }
+
+    .top {
+        transform: rotate(45deg);
+    }
+
+    .bottom {
+        transform: rotate(135deg);
+    }
+}
+
+
+@mixin arrow-base {
+    font-family: $fa;
+    vertical-align: bottom;
+}
+
+    @mixin arrow-left {
+        @include arrow-base;
+        margin-right: 0.5em;
+        content: $arrow-left;
+    }
+
+    @mixin arrow-right {
+        @include arrow-base;
+        margin-left: 0.5em;
+        content: $arrow-right;
+    }
+

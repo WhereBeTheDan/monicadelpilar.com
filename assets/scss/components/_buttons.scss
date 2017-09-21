@@ -1,0 +1,25 @@
+.btn {
+	display: inline-block;
+	padding: 0.25em 1.5em;
+	border: 3px solid $border-color;
+	font-family: $bebas-neue;
+	line-height: 1;
+}
+
+.btn-white {
+	border-color: $white;
+	color: $white;
+	@include font-smooth;
+}
+
+.btn-gradient {
+	background: $gradient;
+}
+
+.btn-medium {
+	font-size: $medium-text;
+}
+
+.btn-large {
+	font-size: $large-text;
+}

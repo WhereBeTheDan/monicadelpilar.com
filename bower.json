@@ -1,0 +1,43 @@
+{
+  "name": "monicadelpilar.com",
+  "description": "Pili's portfolio website",
+  "main": "index.js",
+  "authors": [
+    "Dan"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "dan",
+    "pili",
+    "wedding"
+  ],
+  "homepage": "www.monicadelpilar.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.x",
+    "bxslider-4": "^4.2.5",
+    "font-awesome": "^4.7.0",
+    "bootstrap": "v4.0.0-beta"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [ 
+        "scss/bootstrap-reboot.scss",
+        "scss/bootstrap-grid.scss" 
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    }
+  }
+}
