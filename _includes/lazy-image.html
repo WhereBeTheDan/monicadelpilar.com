@@ -10,6 +10,6 @@
 			<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
 		</noscript>
 	{% else %}
-		<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
+		<img class="lazy {{ include.class }}" src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
 	{% endif %}
 {% endif %}
