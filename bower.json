@@ -24,19 +24,33 @@
     "jquery": "~1.x",
     "bxslider-4": "^4.2.5",
     "font-awesome": "^4.7.0",
-    "bootstrap": "v4.0.0-beta"
+    "bootstrap": "v4.0.0-beta",
+    "waypoints": "^4.0.1",
+    "gsap": "^1.20.2"
   },
   "overrides": {
     "bootstrap": {
-      "main": [ 
+      "main": [
         "scss/bootstrap-reboot.scss",
-        "scss/bootstrap-grid.scss" 
+        "scss/bootstrap-grid.scss"
+      ]
+    },
+    "bxslider-4": {
+      "main": [
+        "./dist/jquery.bxslider.js",
+        "./dist/images/bx_loader.gif",
+        "./dist/images/controls.png"
       ]
     },
     "font-awesome": {
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
+      ]
+    },
+    "gsap": {
+      "main": [
+        "./src/uncompressed/TweenMax.js"
       ]
     }
   }

@@ -3,6 +3,7 @@ title: Lado International Institute
 slug: lado
 image_url: logo-lado.png
 order: 1
+dark_content: true
 colors:
   - #F89923
   - #3169B2

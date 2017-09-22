@@ -2,19 +2,45 @@
 	{% assign portfolio_sorted = site.portfolio | sort: 'order' %}
 	{% for item in portfolio_sorted %}
 
-		<article class="portfolio-item" style="background: linear-gradient({{ item.gradient }});">
+		<article class="portfolio-item{% if item.dark_content %} light-text{% endif %} will-change" style="background: linear-gradient({{ item.gradient }});">
 			<div class="background portfolio-background">
-				{% assign src = '/assets/images/background-' | append: item.slug | append: '.jpg' %}
-				<div class="background-inner" style="background-image: url({{ src  }});"></div>
+				{% assign src = 'background-' | prepend: site.imgpath | prepend: site.cdnurl | append: item.slug | append: '.jpg' %}
+				<div class="background-inner" style="background-image: url({{ src }});"></div>
 			</div>
 			<div class="portfolio-content">
 				<div class="container">
-					<div class="image-content">
-						{% include lazy-image.html src = item.image_url height = '' width = '' alt = item.title %}
+					<div class="row">
+						<div class="image-content">
+							<div class="logo">
+								{% include lazy-image.html src = item.image_url height = '' width = '' alt = item.title class = 'will-appear' %}
+							</div>
+						</div>
+						<div class="text-content will-appear">
+							{{ item.content }}
+						</div>
 					</div>
-					<div class="text-content">
-						{{ item.content }}
-					</div>
+
+					{% if item.gallery != null %}
+						<div class="carousel-content">
+							<div class="row">
+								<div class="navigation">
+									<div class="carousel-prev"></div>
+									<div class="carousel-next"></div>
+								</div>
+								<div class="carousel-wrap">
+									<div class="carousel">
+										{% for image in item.gallery %}
+											<div class="slide">
+												<div class="inner">
+													{% include lazy-image.html src = image height = '' width = '' alt = '' class = 'will-appear' %}
+												</div>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}
 				</div>
 			</div>
 		</article>

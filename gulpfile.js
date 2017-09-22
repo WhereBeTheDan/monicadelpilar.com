@@ -42,7 +42,9 @@ var gulpIf 			= require( 'gulp-if' );
 var sass 			= require( 'gulp-sass' );
 var prefixer		= require( 'gulp-autoprefixer' );	
 var browserSync 	= require( 'browser-sync' ).create();
-var uglify 			= require( 'gulp-uglify' );
+var uglify 			= require( 'uglify-es' );
+var composer 		= require( 'gulp-uglify/composer' );
+var minify			= composer( uglify, console );
 var lazypipe     	= require( 'lazypipe' );
 var plumber      	= require( 'gulp-plumber' );
 var rev          	= require( 'gulp-rev' );
@@ -60,6 +62,8 @@ var wiredep 		= require( 'wiredep' );
 var sourcemaps   	= require( 'gulp-sourcemaps' );
 var runSequence 	= require( 'run-sequence' );
 var changed      	= require( 'gulp-changed' );
+var jslint			= require( 'gulp-jslint' );
+
 var manifest 		= require( 'asset-builder' )( './assets/manifest.json' );
 
 // -------------------------------------
@@ -218,8 +222,15 @@ var jsTasks = function(filename) {
 	  	.pipe(function() {
 	      	return gulpIf(enabled.maps, sourcemaps.init());
 	    })
+	    .pipe(jslint)
+	  //   .pipe(babel)
+	  //   .pipe(() => webpack({
+	  //   	output: {
+			//     filename: filename,
+			// }
+	  //   }) )
 	    .pipe(concat, filename)
-	    .pipe(uglify, {
+	    .pipe(minify, {
 	      	compress: {
 	        	'drop_debugger': enabled.stripJSDebug
 	      	}

@@ -5,7 +5,23 @@
   },
   "dependencies": {
     "main.js": {
-      "files": [ "js/main.js" ],
+      "files": [ 
+        "js/modules/Timer.js",
+        "js/modules/Trigger.js",
+        "js/modules/Simplrz.js",
+        "js/modules/Application.js",
+        "js/modules/DomExtend.js",
+        "js/modules/ExtTransform.js",
+        "js/modules/ExtTransition.js",
+        "js/modules/ExtAnimation.js",
+        "js/modules/FrameImpulse.js",
+        "js/modules/VirtualScroll.js",
+        "js/modules/ScrollPane.js",
+        "js/modules/Section.js",
+        "js/modules/Item.js",
+        "js/modules/Background.js",
+        "js/main.js" 
+      ],
       "main": true
     },
     "main.css": {

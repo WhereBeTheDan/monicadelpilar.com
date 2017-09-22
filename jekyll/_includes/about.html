@@ -2,13 +2,13 @@
 	{% assign about_sorted = site.about | sort: 'order' %}
 	{% for section in about_sorted %}
 
-		<article class="about-section">
+		<article class="about-section will-change">
 			<div class="container">
 				<div class="content-inner">
 					<div class="image-content">
-						{% include lazy-image.html src = section.image_url height = '' width = '' alt = '' %}
+						{% include lazy-image.html src = section.image_url height = '' width = '' alt = '' class = 'will-appear' %}
 					</div>
-					<div class="text-content">
+					<div class="text-content will-appear">
 						<h2 class="about-title">{{ section.title }}</h2>
 						<div class="about-content">{{ section.content }}</div>
 					</div>

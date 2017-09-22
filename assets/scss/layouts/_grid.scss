@@ -3,3 +3,7 @@
 	width: 100%;
 	max-width: $container-width;
 }
+
+#page-container {
+	will-change: transform;
+}

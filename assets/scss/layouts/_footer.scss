@@ -1,0 +1,13 @@
+.site-footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	color: $white;
+	padding: 1em 0;
+	@include font-smooth;
+
+	.colophon {
+		margin: 0;
+		line-height: 1;
+	}
+}

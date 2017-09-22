@@ -3,7 +3,131 @@
 	position: relative;
 	padding: 6em 0;
 
+	&.light-text {
+		color: $white;
+		font-weight: 600;
+		@include font-smooth;
+		@include text-shadow;
+	}
+
 	.portfolio-content {
 		position: relative;
+	}
+
+	.image-content, .text-content, .carousel-wrap {
+		@include make-col-ready;
+	}
+
+	.navigation {
+		display: none;
+	}
+
+	.text-content {
+		margin-top: 1em;
+	}
+
+	.carousel-content {
+		.slide {
+			&:before {
+				content: '';
+				display: block;
+				padding-bottom: 75%;
+			}
+
+			.inner {
+				@include overlay;
+				overflow: hidden;
+
+				&:after {
+					content: '';
+					@include overlay;
+					background-image: linear-gradient(to bottom, transparentize($black, 0.8), transparent 20%, transparent 70%, transparentize($black, 0.6));
+				}
+			}
+
+			img {
+				height: 100%;
+			    width: 100%;
+			    object-fit: cover;
+			    object-position: center;
+			}
+		}
+	}
+		
+
+	@include media-breakpoint-up(md) {
+		.image-content, .text-content {
+			@include make-col(6);
+		}
+
+		.logo {
+			max-width: 400px;
+		}
+
+		.text-content {
+			font-size: $large-text;
+			margin-top: 4em;
+		}
+
+		.carousel-content {
+			padding: 4em 0;
+
+			.navigation {
+				@include make-col-ready;
+				@include make-col(4);
+				display: flex;
+				align-items: flex-end;
+
+				.carousel-prev,
+				.carousel-next {
+					position: relative;
+					width: 2em;
+				}
+
+				.carousel-prev {
+					margin-right: 2em;
+				}
+
+				.bx-prev,
+				.bx-next {
+					color: $white;
+					position: absolute;
+					text-indent: -9999px;
+
+					&:before {
+						font-family: $fa;
+						font-size: 2em;
+						position: absolute;
+						text-indent: 0;
+						top: 0;
+						left: 0;
+					}
+
+					&:hover {
+						color: lighten($hot-pink, 10%);
+					}
+				}
+
+				.bx-prev:before {
+					content: $arrow-left;
+				}
+
+				.bx-next:before {
+					content: $arrow-right;
+				}
+			}
+
+			.carousel-wrap {
+				@include make-col(8);
+
+				.bx-viewport {
+					overflow: visible !important;
+				}
+
+				.slide {
+					margin-right: $grid-gutter;
+				}
+			}
+		}
 	}
 }

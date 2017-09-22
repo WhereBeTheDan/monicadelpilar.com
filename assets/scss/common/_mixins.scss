@@ -90,8 +90,8 @@
     box-shadow: 0 $y $spread $offset $color;
 }
 
-@mixin text-shadow {
-    text-shadow: 0 3px 5px transparentize($dark-green, 0.5);
+@mixin text-shadow($y: 3px, $spread: 4px, $color: transparentize($text-color, 0.7)) {
+    text-shadow: 0 $y $spread $color;
 }
 
 @mixin font-smooth {

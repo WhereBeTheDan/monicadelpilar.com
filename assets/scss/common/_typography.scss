@@ -1,3 +1,44 @@
+// Custom fonts
+
+@font-face {
+    font-family: $bebas;
+    src:url('../fonts/Bebas.ttf.woff') format('woff'),
+        url('../fonts/Bebas.ttf.svg#Bebas') format('svg'),
+        url('../fonts/Bebas.ttf.eot'),
+        url('../fonts/Bebas.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $bebas-neue;
+    src: url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: $bebas-neue;
+    src: url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: $bebas-neue;
+    src: url('../fonts/bebasneue_light-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+// Styles
 
 html {
 	font-size: $font-size;
@@ -7,6 +48,7 @@ body {
 	font-family: $body;
 	font-size: 85%;
 	line-height: $line-height;
+	font-weight: 400;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

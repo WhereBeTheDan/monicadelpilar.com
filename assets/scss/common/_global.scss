@@ -1,3 +1,11 @@
+body {
+	overflow: hidden;
+}
+
+.wrap {
+	@include overlay;
+}
+
 a {
     transition: color 0.2s ease-in-out;
 
@@ -42,8 +50,22 @@ hr {
 
 	.background-inner {
 		@include overlay;
+		top: -15%;
+		bottom: -15%;
 		background-position: center;
 		background-size: cover;
+	}
+}
+
+.will-appear {
+	opacity: 0;
+	transform: translate3d(0, 10vh, 1px);
+	transition: opacity 1s, transform 1s $ease-out-custom;
+
+	&.is-up {
+		opacity: 1;
+		transform: none;
+		will-change: auto !important;
 	}
 }
 
@@ -53,6 +75,8 @@ hr {
 	padding: 0;
 
 	li {
+		margin-right: 0.75em;
+
 		a {
 			display: flex;
 			width: 2em;

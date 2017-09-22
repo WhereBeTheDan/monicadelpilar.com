@@ -4,4 +4,15 @@ input, textarea, button {
 	width: 100%;
 	max-width: none;
 	padding: 0.5em 1em;
+	font-size: $large-text;
+	border: 1px solid $grey;
+}
+
+[type="submit"] {
+	@extend .btn;
+	@extend .btn-gradient;
+	border: none;
+	font-size: 1.75em;
+	padding: 0.5em 1em;
+	color: $white;
 }
