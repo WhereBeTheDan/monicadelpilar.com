@@ -1,32 +1,42 @@
-<section class="contact">
+<section class="contact will-change">
 	<div class="container">
-		<div class="form-box">
+		<div class="form-box will-appear">
 			<h2 class="form-title">Questions? Inquiries? <span>Give me a shout.</span></h2>
-			<form action="/">
+			<form id="contact-form" action="https://formspree.io/pili@monicadelpilar.com" method="POST">
 				<div class="input-group">
 					<div class="input">
-						<input type="text" placeholder="First" required />				
+						<input name="first_name" type="text" placeholder="First" required />				
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Last" required />
+						<input name="last_name" type="text" placeholder="Last" required />
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Company" />
+						<input name="company" type="text" placeholder="Company" />
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Title" />
+						<input name="title" type="text" placeholder="Title" />
 					</div>
 					<div class="input">
-						<input type="email" placeholder="Email" required />
+						<input name="email" type="email" placeholder="Email" required />
 					</div>
 					<div class="input">
-						<input type="tel" placeholder="Phone" />
+						<input name="phone" type="tel" placeholder="Phone" />
 					</div>
 					<div class="textarea">
-						<textarea placeholder="What's on your mind?"></textarea>
+						<textarea name="message" rows="4" placeholder="What's on your mind?"></textarea>
 					</div>
+					<input type="text" name="_gotcha" style="display:none" />
+					<input type="hidden" name="_subject" value="New submission!" />
 				</div>
-				<button type="submit">Submit</button>			
+				<button type="submit">
+					<div class="overlay">
+						<span class="top"></span>
+						<span class="left"></span>
+						<span class="right"></span>
+						<span class="bottom"></span>
+					</div>
+					<span class="text">Submit</span>
+				</button>			
 			</form>
 		</div>
 	</div>

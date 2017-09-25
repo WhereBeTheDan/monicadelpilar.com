@@ -106,6 +106,10 @@
     -moz-osx-font-smoothing: auto;
 }
 
+@mixin mdp-gradient($angle: 125deg) {
+    background: linear-gradient($angle, $blue, $hot-pink 60%, $fuchsia);
+}
+
 
 //------------------------------//
 //          Animations          //

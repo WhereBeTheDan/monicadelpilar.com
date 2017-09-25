@@ -87,34 +87,6 @@
 				.carousel-prev {
 					margin-right: 2em;
 				}
-
-				.bx-prev,
-				.bx-next {
-					color: $white;
-					position: absolute;
-					text-indent: -9999px;
-
-					&:before {
-						font-family: $fa;
-						font-size: 2em;
-						position: absolute;
-						text-indent: 0;
-						top: 0;
-						left: 0;
-					}
-
-					&:hover {
-						color: lighten($hot-pink, 10%);
-					}
-				}
-
-				.bx-prev:before {
-					content: $arrow-left;
-				}
-
-				.bx-next:before {
-					content: $arrow-right;
-				}
 			}
 
 			.carousel-wrap {

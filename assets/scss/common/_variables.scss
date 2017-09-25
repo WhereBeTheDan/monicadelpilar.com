@@ -73,7 +73,7 @@ $link-color:				$hot-pink;
 $link-hover-color:			lighten($hot-pink, 10%);
 $border-color:				$input-grey;
 
-$gradient:					linear-gradient(125deg, $blue, $hot-pink 60%, $fuchsia);
+$gradient:					mdp-gradient();
 
 //------------------------------//
 //      Bootstrap Overrides     //

@@ -26,7 +26,8 @@
     "font-awesome": "^4.7.0",
     "bootstrap": "v4.0.0-beta",
     "waypoints": "^4.0.1",
-    "gsap": "^1.20.2"
+    "gsap": "^1.20.2",
+    "vanilla-lazyload": "^10.3.0"
   },
   "overrides": {
     "bootstrap": {
@@ -46,11 +47,6 @@
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
-      ]
-    },
-    "gsap": {
-      "main": [
-        "./src/uncompressed/TweenMax.js"
       ]
     }
   }

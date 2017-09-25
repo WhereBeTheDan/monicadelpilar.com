@@ -1,15 +1,21 @@
 {% if include.src != null %}
 	{% assign srcparts = include.src | split: '.' %}
 
-	{% if false %}
-		<img class="lazy {{ include.class }}" 
-			 data-src="{{ 'nothing.gif' | prepend: site.imgpath | prepend: site.cdnurl }}" 
-			 data-lazy="[{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}, (default)], [{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}, (only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi))]" 
-			 height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
-		<noscript>
-			<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
-		</noscript>
-	{% else %}
-		<img class="lazy {{ include.class }}" src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ include.width }}" alt="{{ include.alt }}" />
-	{% endif %}
+	{% capture width %}{% if include.width %}{{ include.width }}{% else %}400{% endif %}{% endcapture %}
+
+	{% capture srcset %}
+		{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}.{{ srcparts[1] }} {{ width }}w,
+		{% if include.hasRetina %}
+			{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }} {{ width | times: 2 }}w
+		{% endif %}
+	{% endcapture %}
+
+	<img class="lazy {{ include.class }}" 
+		 data-src="{{ 'nothing.gif' | prepend: site.imgpath | prepend: site.cdnurl }}" 
+		 data-srcset="{{ srcset }}" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="{{ include.height }}" width="{{ width }}" alt="{{ include.alt }}" />
+	<noscript>
+		<img src="{{ srcparts[0] | prepend: site.imgpath | prepend: site.cdnurl }}@2x.{{ srcparts[1] }}" height="{{ include.height }}" width="{{ width }}" alt="{{ include.alt }}" />
+	</noscript>
 {% endif %}

@@ -12,4 +12,6 @@
 	<link rel="stylesheet" href="{{ '/assets/styles/main' | append: site.csshash | append: '.css' | prepend: site.cdnurl }}" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+	<script>document.documentElement.classList.add('scroll-lock')</script>
 </head>

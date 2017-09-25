@@ -5,9 +5,9 @@ image_url: logo-reebok.svg
 order: 3
 dark_content: true
 colors:
-  - #DCDCDC
-  - #B72329
-  - #000000
+  - '#DCDCDC'
+  - '#B72329'
+  - '#000000'
 gradient: '250deg, #DCDCDC, #B72329 30%, #000000'
 gallery: 
   - reebok/1.jpg

@@ -4,9 +4,9 @@ slug: koxis
 image_url: logo-koxis.png
 order: 2
 colors:
-  - #F2F2F2
-  - #F8EFED
-  - #EBC1D7
+  - '#F2F2F2'
+  - '#F8EFED'
+  - '#EBC1D7'
 gradient: 'to bottom, #F2F2F2, #F8EFED 30%, #EBC1D7'
 gallery:
   - koxis/1.jpg

@@ -1,10 +1,20 @@
 body {
 	overflow: hidden;
+
+	.wrap {
+		@include overlay;
+	}
 }
 
-.wrap {
-	@include overlay;
-}
+	.touch {
+		body {
+			overflow: auto;
+		}
+
+		.wrap {
+			position: static;
+		}
+	}
 
 a {
     transition: color 0.2s ease-in-out;
@@ -54,18 +64,34 @@ hr {
 		bottom: -15%;
 		background-position: center;
 		background-size: cover;
+		opacity: 0;
+		transition: opacity 0.3s ease-in 0.3s;
+
+		&.loaded {
+			opacity: 1;
+		}
 	}
 }
 
-.will-appear {
-	opacity: 0;
-	transform: translate3d(0, 10vh, 1px);
-	transition: opacity 1s, transform 1s $ease-out-custom;
+@include media-breakpoint-up(md) {
+	.will-appear {
+		opacity: 0;
+		transform: translate3d(0, 10vh, 1px);
+		transition: opacity 1s, transform 1s $ease-out-custom;
 
-	&.is-up {
-		opacity: 1;
-		transform: none;
-		will-change: auto !important;
+		&.is-up {
+			opacity: 1;
+			transform: none;
+			will-change: auto !important;
+		}
+	}
+}
+
+.lazy {
+	opacity: 0 !important;
+
+	&.loaded {
+		opacity: 1 !important;
 	}
 }
 
@@ -88,6 +114,15 @@ hr {
 			@include box-shadow;
 			font-size: $large-text;
 			color: $text-color;
+
+			@include media-breakpoint-up(md) {
+				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+				&:hover {
+					background-color: $fuchsia;
+					color: $white;
+				}
+			}
 		}
 	}
 }

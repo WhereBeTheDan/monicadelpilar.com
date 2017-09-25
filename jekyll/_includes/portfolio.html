@@ -2,10 +2,21 @@
 	{% assign portfolio_sorted = site.portfolio | sort: 'order' %}
 	{% for item in portfolio_sorted %}
 
-		<article class="portfolio-item{% if item.dark_content %} light-text{% endif %} will-change" style="background: linear-gradient({{ item.gradient }});">
+		<article class="portfolio-item{% if item.dark_content %} light-text{% endif %} will-change {{ item.slug }}" style="background: linear-gradient({{ item.gradient }});">
+			<style>
+				.{{ item.slug }} .bx-prev,
+				.{{ item.slug }} .bx-next {
+					color: {{ item.colors.first }};
+				}
+				.{{ item.slug }} .bx-prev:hover,
+				.{{ item.slug }} .bx-next:hover {
+					color: {{ item.colors[1] }};
+				}
+			</style>
+
 			<div class="background portfolio-background">
 				{% assign src = 'background-' | prepend: site.imgpath | prepend: site.cdnurl | append: item.slug | append: '.jpg' %}
-				<div class="background-inner" style="background-image: url({{ src }});"></div>
+				<div class="background-inner" data-src="{{ src }}"></div>
 			</div>
 			<div class="portfolio-content">
 				<div class="container">
@@ -31,8 +42,8 @@
 									<div class="carousel">
 										{% for image in item.gallery %}
 											<div class="slide">
-												<div class="inner">
-													{% include lazy-image.html src = image height = '' width = '' alt = '' class = 'will-appear' %}
+												<div class="inner will-appear">
+													{% include lazy-image.html src = image height = '' width = '' alt = '' %}
 												</div>
 											</div>
 										{% endfor %}

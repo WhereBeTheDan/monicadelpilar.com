@@ -1,9 +1,9 @@
-function Background(options) {
+function Background(_el, options = {}) {
 	/*
 		Private methods
 	*/
 	var self = {};
-	var el = options.el;
+	var el = _el;
 	var parent = el.parentNode;
 	var inner = el.ext.select('.background-inner');
 

@@ -10,6 +10,7 @@
         "js/modules/Trigger.js",
         "js/modules/Simplrz.js",
         "js/modules/Application.js",
+        "js/modules/Carousel.js",
         "js/modules/DomExtend.js",
         "js/modules/ExtTransform.js",
         "js/modules/ExtTransition.js",

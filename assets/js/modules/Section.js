@@ -1,9 +1,9 @@
-function Section(options) {
+function Section(_el, options = {}) {
 	/*
 		Private methods
 	*/
 	var self = {};
-	var el = options.el;
+	var el = _el;
 
 	var offsetTop = options.offsetTop || 0, 
 		offsetBottom = options.offsetBottom || 0;

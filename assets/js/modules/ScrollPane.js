@@ -17,7 +17,6 @@ ScrollPane = function(container, blockTest, scrollFunc) {
 	}
 
 	var onFrame = function() {
-
 		if(contentHeight < windowHeight) return;
 
 		scroll += (scrollTarget - scroll) * ease;
@@ -44,6 +43,12 @@ ScrollPane = function(container, blockTest, scrollFunc) {
 		maxScroll = contentHeight - windowHeight;
 		scroll = 0;
 		scrollTarget = 0;
+
+		if (!Simplrz.touch) {
+			this.on(h)
+		} else {
+			this.off()
+		}
 	}
 
 	return {
@@ -88,7 +93,6 @@ ScrollPane = function(container, blockTest, scrollFunc) {
 			}
 		},
 		on: function(h) {
-			refresh(h);
 			VirtualScroll.on(onScroll);
 			FrameImpulse.on(onFrame);
 		},

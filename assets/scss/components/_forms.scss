@@ -3,9 +3,11 @@ input, textarea, button {
 	display: block;
 	width: 100%;
 	max-width: none;
-	padding: 0.5em 1em;
+	padding: 0.75em 1em 0.5em;
 	font-size: $large-text;
 	border: 1px solid $grey;
+	border-radius: 0;
+	appearance: none;
 }
 
 [type="submit"] {
