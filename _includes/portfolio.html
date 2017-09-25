@@ -23,7 +23,7 @@
 					<div class="row">
 						<div class="image-content">
 							<div class="logo">
-								{% include lazy-image.html src = item.image_url height = '' width = '' alt = item.title class = 'will-appear' %}
+								{% include lazy-image.html src = item.image_url alt = item.title class = 'will-appear' %}
 							</div>
 						</div>
 						<div class="text-content will-appear">
@@ -43,7 +43,8 @@
 										{% for image in item.gallery %}
 											<div class="slide">
 												<div class="inner will-appear">
-													{% include lazy-image.html src = image height = '' width = '' alt = '' %}
+													{% assign alt = item.slug | append: ' ' | append: forloop.index %}
+													{% include lazy-image.html src = image alt = alt %}
 												</div>
 											</div>
 										{% endfor %}
