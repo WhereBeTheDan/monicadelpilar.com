@@ -1,6 +1,6 @@
 <section class="heroic will-change">
 	<div class="background heroic-background">
-		<div class="background-inner"></div>
+		<div class="background-inner" data-src="/assets/images/background-heroic.png"></div>
 	</div>
 	<div class="section-content">
 		<p class="email">
@@ -15,7 +15,15 @@
 	        {% endfor %}
 	    </ul>
 	    <div class="btn-wrap">
-			<a href="#resume" class="btn btn-large btn-white btn-gradient">Resumé</a>
+			<a href="#resume" class="btn btn-large btn-white btn-gradient">
+				<div class="overlay">
+					<span class="top"></span>
+					<span class="left"></span>
+					<span class="right"></span>
+					<span class="bottom"></span>
+				</div>
+				<span class="text">Resumé</span>
+			</a>
 		</div>
 	</div>	
 </section>

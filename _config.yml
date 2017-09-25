@@ -7,10 +7,10 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.monicadelpilar.com"
 
-cdnurl: '/monicadelpilar.com'
+cdnurl: ''
 imgpath: '/assets/images/'
-csshash: ''
-jshash: ''
+csshash: '-82b8ae0aa0'
+jshash: '-f5c579b084'
 ganalytics: ''
 
 # Build settings

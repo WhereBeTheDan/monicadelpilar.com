@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="/assets/styles/main.css" />
 	<link rel="canonical" href="localhost:3000/">
 	<link rel="alternate" type="application/rss+xml" title="Monica del Pilar" href="localhost:3000/feed.xml">
+
+	<script>document.documentElement.classList.add('scroll-lock')</script>
 </head>
 
 
@@ -24,9 +26,9 @@
 	<div class="container-fluid">
 		<h1 class="site-title">
 			<a href="/">
-				<span>Monica</span>
-				<span>del</span>
-				<span>Pilar</span>
+				<span class="will-appear">Monica</span>
+				<span class="will-appear">del</span>
+				<span class="will-appear">Pilar</span>
 			</a>
 		</h1>
 	</div>
@@ -36,7 +38,7 @@
 			<main id="page-container">
 				<section class="heroic will-change">
 	<div class="background heroic-background">
-		<div class="background-inner"></div>
+		<div class="background-inner" data-src="/assets/images/background-heroic.png"></div>
 	</div>
 	<div class="section-content">
 		<p class="email">
@@ -61,7 +63,15 @@
 	        
 	    </ul>
 	    <div class="btn-wrap">
-			<a href="#resume" class="btn btn-large btn-white btn-gradient">Resumé</a>
+			<a href="#resume" class="btn btn-large btn-white btn-gradient">
+				<div class="overlay">
+					<span class="top"></span>
+					<span class="left"></span>
+					<span class="right"></span>
+					<span class="bottom"></span>
+				</div>
+				<span class="text">Resumé</span>
+			</a>
 		</div>
 	</div>	
 </section>
@@ -77,8 +87,22 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/about-about_me.png" height="" width="" alt="" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/about-about_me.png 400w,
+		
+			/assets/images/about-about_me@2x.png 800w
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="400" alt="About Me" />
+	<noscript>
+		<img src="/assets/images/about-about_me@2x.png" height="" width="400" alt="About Me" />
+	</noscript>
 
 					</div>
 					<div class="text-content will-appear">
@@ -100,8 +124,22 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/about-what_ive_done.png" height="" width="" alt="" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/about-what_ive_done.png 400w,
+		
+			/assets/images/about-what_ive_done@2x.png 800w
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="400" alt="What I've Done" />
+	<noscript>
+		<img src="/assets/images/about-what_ive_done@2x.png" height="" width="400" alt="What I've Done" />
+	</noscript>
 
 					</div>
 					<div class="text-content will-appear">
@@ -123,8 +161,22 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/about-what_i_do.png" height="" width="" alt="" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/about-what_i_do.png 400w,
+		
+			/assets/images/about-what_i_do@2x.png 800w
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="400" alt="What I Do" />
+	<noscript>
+		<img src="/assets/images/about-what_i_do@2x.png" height="" width="400" alt="What I Do" />
+	</noscript>
 
 					</div>
 					<div class="text-content will-appear">
@@ -142,10 +194,21 @@
 	
 	
 
-		<article class="portfolio-item light-text will-change" style="background: linear-gradient(170deg, #F89923, #3169B2 60%, #113999);">
+		<article class="portfolio-item light-text will-change lado" style="background: linear-gradient(170deg, #F89923, #3169B2 60%, #113999);">
+			<style>
+				.lado .bx-prev,
+				.lado .bx-next {
+					color: #F89923;
+				}
+				.lado .bx-prev:hover,
+				.lado .bx-next:hover {
+					color: #3169B2;
+				}
+			</style>
+
 			<div class="background portfolio-background">
 				
-				<div class="background-inner" style="background-image: url(/assets/images/background-lado.jpg);"></div>
+				<div class="background-inner" data-src="/assets/images/background-lado.jpg"></div>
 			</div>
 			<div class="portfolio-content">
 				<div class="container">
@@ -156,13 +219,25 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/logo-lado.png" height="" width="" alt="Lado International Institute" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/logo-lado.png w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="Lado International Institute" />
+	<noscript>
+		<img src="/assets/images/logo-lado@2x.png" height="" width="" alt="Lado International Institute" />
+	</noscript>
 
 							</div>
 						</div>
 						<div class="text-content will-appear">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper lacus faucibus ante laoreet, eget vehicula odio varius. Mauris vitae varius felis. Vestibulum mi erat, posuere in dapibus efficitur, egestas sed elit. Nulla tempor ultrices diam a finibus. Nam pretium volutpat neque, et aliquam mauris fringilla nec. Nunc vulputate nunc a purus iaculis iaculis. Maecenas fringilla ac lectus a auctor. Sed sed tortor egestas, placerat tellus vitae, dapibus mi. Sed dapibus, sapien quis placerat facilisis, augue est viverra dolor, eget luctus libero orci eu lectus. Donec blandit nulla a dignissim tristique. Maecenas vitae tortor consequat, mollis metus a, semper elit. Phasellus sed diam ipsum. Suspendisse mattis quam at mattis mollis. Nullam auctor aliquam odio ut vestibulum. Vestibulum non lobortis massa, at egestas turpis. Vestibulum pellentesque magna nec tincidunt rutrum. Something here.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper lacus faucibus ante laoreet, eget vehicula odio varius. Mauris vitae varius felis. Vestibulum mi erat, posuere in dapibus efficitur, egestas sed elit. Nulla tempor ultrices diam a finibus. Nam pretium volutpat neque, et aliquam mauris fringilla nec. Nunc vulputate nunc a purus iaculis iaculis. Maecenas fringilla ac lectus a auctor. Sed sed tortor egestas, placerat tellus vitae, dapibus mi. Sed dapibus, sapien quis placerat facilisis, augue est viverra dolor, eget luctus libero orci eu lectus. Donec blandit nulla a dignissim tristique. Maecenas vitae tortor consequat, mollis metus a, semper elit. Phasellus sed diam ipsum. Suspendisse mattis quam at mattis mollis. Nullam auctor aliquam odio ut vestibulum. Vestibulum non lobortis massa, at egestas turpis. Vestibulum pellentesque magna nec tincidunt rutrum.</p>
 
 						</div>
 					</div>
@@ -174,10 +249,21 @@
 
 	
 
-		<article class="portfolio-item will-change" style="background: linear-gradient(to bottom, #F2F2F2, #F8EFED 30%, #EBC1D7);">
+		<article class="portfolio-item will-change koxis" style="background: linear-gradient(to bottom, #F2F2F2, #F8EFED 30%, #EBC1D7);">
+			<style>
+				.koxis .bx-prev,
+				.koxis .bx-next {
+					color: #F2F2F2;
+				}
+				.koxis .bx-prev:hover,
+				.koxis .bx-next:hover {
+					color: #F8EFED;
+				}
+			</style>
+
 			<div class="background portfolio-background">
 				
-				<div class="background-inner" style="background-image: url(/assets/images/background-koxis.jpg);"></div>
+				<div class="background-inner" data-src="/assets/images/background-koxis.jpg"></div>
 			</div>
 			<div class="portfolio-content">
 				<div class="container">
@@ -188,8 +274,20 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/logo-koxis.png" height="" width="" alt="Koxis" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/logo-koxis.png w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="Koxis" />
+	<noscript>
+		<img src="/assets/images/logo-koxis@2x.png" height="" width="" alt="Koxis" />
+	</noscript>
 
 							</div>
 						</div>
@@ -210,37 +308,73 @@
 									<div class="carousel">
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/koxis/1.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/koxis/1.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/koxis/1@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/koxis/2.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/koxis/2.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/koxis/2@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/koxis/3.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/koxis/3.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/koxis/3@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
@@ -256,10 +390,21 @@
 
 	
 
-		<article class="portfolio-item light-text will-change" style="background: linear-gradient(250deg, #DCDCDC, #B72329 30%, #000000);">
+		<article class="portfolio-item light-text will-change reebok" style="background: linear-gradient(250deg, #DCDCDC, #B72329 30%, #000000);">
+			<style>
+				.reebok .bx-prev,
+				.reebok .bx-next {
+					color: #DCDCDC;
+				}
+				.reebok .bx-prev:hover,
+				.reebok .bx-next:hover {
+					color: #B72329;
+				}
+			</style>
+
 			<div class="background portfolio-background">
 				
-				<div class="background-inner" style="background-image: url(/assets/images/background-reebok.jpg);"></div>
+				<div class="background-inner" data-src="/assets/images/background-reebok.jpg"></div>
 			</div>
 			<div class="portfolio-content">
 				<div class="container">
@@ -270,8 +415,20 @@
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/logo-reebok.svg" height="" width="" alt="Reebok" />
+
 	
+
+	<img class="lazy will-appear" 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/logo-reebok.svg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="Reebok" />
+	<noscript>
+		<img src="/assets/images/logo-reebok@2x.svg" height="" width="" alt="Reebok" />
+	</noscript>
 
 							</div>
 						</div>
@@ -292,133 +449,265 @@
 									<div class="carousel">
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/1.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/1.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/1@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/2.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/2.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/2@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/3.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/3.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/3@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/4.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/4.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/4@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/5.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/5.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/5@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/6.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/6.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/6@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/7.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/7.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/7@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/8.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/8.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/8@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/9.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/9.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/9@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/10.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/10.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/10@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
 										
 											<div class="slide">
-												<div class="inner">
+												<div class="inner will-appear">
 													
 	
 
 	
-		<img class="lazy will-appear" src="/assets/images/reebok/11.jpg" height="" width="" alt="" />
+
 	
+
+	<img class="lazy " 
+		 data-src="/assets/images/nothing.gif" 
+		 data-srcset="
+		/assets/images/reebok/11.jpg w,
+		
+	" 
+		 sizes="(min-width: 768px) 50vw, 100vw"
+		 height="" width="" alt="" />
+	<noscript>
+		<img src="/assets/images/reebok/11@2x.jpg" height="" width="" alt="" />
+	</noscript>
 
 												</div>
 											</div>
@@ -434,35 +723,45 @@
 
 	
 </section>
-				<section class="contact">
+				<section class="contact will-change">
 	<div class="container">
-		<div class="form-box">
+		<div class="form-box will-appear">
 			<h2 class="form-title">Questions? Inquiries? <span>Give me a shout.</span></h2>
-			<form action="/">
+			<form id="contact-form" action="https://formspree.io/pili@monicadelpilar.com" method="POST">
 				<div class="input-group">
 					<div class="input">
-						<input type="text" placeholder="First" required />				
+						<input name="first_name" type="text" placeholder="First" required />				
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Last" required />
+						<input name="last_name" type="text" placeholder="Last" required />
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Company" />
+						<input name="company" type="text" placeholder="Company" />
 					</div>
 					<div class="input">
-						<input type="text" placeholder="Title" />
+						<input name="title" type="text" placeholder="Title" />
 					</div>
 					<div class="input">
-						<input type="email" placeholder="Email" required />
+						<input name="email" type="email" placeholder="Email" required />
 					</div>
 					<div class="input">
-						<input type="tel" placeholder="Phone" />
+						<input name="phone" type="tel" placeholder="Phone" />
 					</div>
 					<div class="textarea">
-						<textarea placeholder="What's on your mind?"></textarea>
+						<textarea name="message" rows="4" placeholder="What's on your mind?"></textarea>
 					</div>
+					<input type="text" name="_gotcha" style="display:none" />
+					<input type="hidden" name="_subject" value="New submission!" />
 				</div>
-				<button type="submit">Submit</button>			
+				<button type="submit">
+					<div class="overlay">
+						<span class="top"></span>
+						<span class="left"></span>
+						<span class="right"></span>
+						<span class="bottom"></span>
+					</div>
+					<span class="text">Submit</span>
+				</button>			
 			</form>
 		</div>
 	</div>
