@@ -87,7 +87,7 @@ $btn-border-width: 	3px;
 			transition: opacity 0.3s ease-in-out;
 		}
 
-		&:hover {
+		&:hover, &:active {
 			color: $fuchsia;
 
 			&:before {

@@ -110,6 +110,20 @@
     background: linear-gradient($angle, $blue, $hot-pink 60%, $fuchsia);
 }
 
+@mixin gradient-hover($gradient) {
+    background: $gradient;
+    background-size: 100% 200%;
+    background-position: center 0;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text !important;
+    transition: background-position 0.4s $ease-in-out-cube;
+
+    &:hover, &:active {
+        background-position: center 100%;
+        color: $fuchsia;
+    }
+}
+
 
 //------------------------------//
 //          Animations          //

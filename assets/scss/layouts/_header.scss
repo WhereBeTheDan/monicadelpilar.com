@@ -74,6 +74,7 @@
 				font-family: $bebas-neue;
 				font-size: $h2;
 				@include font-smooth;
+				@include gradient-hover( linear-gradient( to bottom, $white 50%, lighten($hot-pink, 40%) 50%, lighten($fuchsia, 40%) ) );
 			}
 
 			span {

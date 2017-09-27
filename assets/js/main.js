@@ -121,8 +121,6 @@ $(window).on('load', function() {
     }
     window.dispatchEvent(event);
 
-    console.log(EXT.select('.wrap'))
-
     let bgLazyLoad = new LazyLoad({
     	container: EXT.select('.wrap'),
     	threshold: 600,
